@@ -1,0 +1,26 @@
+
+
+
+<a href="<?php echo $this->url('api_admin_create'); ?>">Ajouter un pays</a>
+
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Actions</th>
+    </tr>
+    
+<?php
+    foreach ($this->vars()->pays as $pays) {
+?>
+    <tr>
+        <td><?php echo $pays['nom_fr_fr']; ?></td>
+        <td>
+            <a href="<?php echo $this->url('api_admin_update', ['code' => $pays['code']]); ?>">Modifier</a>
+            <a href="<?php echo $this->url('api_admin_delete', ['code' => $pays['code']]); ?>">Supprimer</a>
+        </td>
+    </tr>
+<?php
+    }
+?>
+    
+</table>

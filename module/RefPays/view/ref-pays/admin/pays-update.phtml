@@ -1,0 +1,12 @@
+<?php
+    $form = $this->form;
+    
+    $form->setAttribute('action', $this->url('api_admin_update', ['code' => $this->code]));
+?>
+<h2>Modification d'un pays</h2>
+
+<section class="register">
+    <?php echo $this->form()->render($form); ?>
+</section>
+
+<a href="<?php echo $this->url('api_admin'); ?>"><< Retour à la liste</a>
