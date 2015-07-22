@@ -1,6 +1,6 @@
 <?php
 
-namespace RefPAys\Controller;
+namespace RefPays\Controller;
 
 use Zend\Mvc\Controller\AbstractRestfulController;
 use Zend\View\Model\ViewModel;
@@ -21,17 +21,22 @@ class ApiController extends AbstractRestfulController
      */
     public function indexAction()
     {
+	    //select
         if ($this->getRequest()->getMethod() == 'GET') {
             $view = $this->getAction();
             
             $view->setTemplate("/ref-pays/api/get.phtml");
             
             return $view;
+            
+        //insert 
         } else if ($this->getRequest()->getMethod() == "POST") {
             $json = $this->getRequest()->getContent();
             $data = json_decode($json, true);
             
             $this->save($data);
+            
+        //update
         } else if ($this->getRequest()->getMethod() == "PATCH") {
             $code = $this->params('code');
             
@@ -61,7 +66,7 @@ class ApiController extends AbstractRestfulController
     {
         $paysTable = $this->getServiceLocator()->get('pays-table');
         
-        $pays = new \RefPAys\Model\Pays();
+        $pays = new \RefPays\Model\Pays();
         $pays->exchangeArray($data);
         
         $paysTable->savePays($pays, $isApi);

@@ -1,13 +1,13 @@
 <?php
 
-namespace RefPAys\Controller;
+namespace RefPays\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\Authentication\AuthenticationService;
 use Zend\Authentication\Adapter\Http;
 use Zend\Authentication\Adapter\Http\FileResolver;
-use RefPAys\Form\Pays;
+use RefPays\Form\Pays;
 
 class AdminController extends AbstractActionController
 {
@@ -22,7 +22,7 @@ class AdminController extends AbstractActionController
         $paysList = $paysTable->getPaysAdmin("", "nom_fr_fr", true);
         
         $view->setVariable('pays', $paysList);
-        
+        var_dump($paysList);
         return $view;
     }
     
@@ -116,7 +116,7 @@ class AdminController extends AbstractActionController
     public function savePays($data)
     {
         if (is_array($data)) {
-            $pays = new \RefPAys\Model\Pays();
+            $pays = new \RefPays\Model\Pays();
             $pays->exchangeArray($data);
         } else {
             $pays = $data;

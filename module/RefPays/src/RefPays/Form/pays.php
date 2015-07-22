@@ -1,6 +1,6 @@
 <?php
 
-namespace RefPAys\Form;
+namespace RefPays\Form;
 
 use Zend\Form\Form;
 use Zend\Form\Element\Text;

@@ -1,6 +1,6 @@
 <?php
 
-namespace RefPAys\Model;
+namespace RefPays\Model;
 
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Select;

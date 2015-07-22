@@ -1,6 +1,6 @@
 <?php
 
-namespace RefPAys\Model;
+namespace RefPays\Model;
 
 class Pays
 {

@@ -7,7 +7,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'RefPAys\Controller\Index',
+                        'controller' => 'RefPays\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -17,7 +17,7 @@ return array(
                 'options' => array(
                     'route'    => '/api/pays[/:code]',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'RefPAys\Controller',
+                        '__NAMESPACE__' => 'RefPays\Controller',
                         'controller'    => 'Api',
                         'action'        => 'index',
                     ),
@@ -28,7 +28,7 @@ return array(
                 'options' => array(
                     'route'    => '/admin/api',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'RefPAys\Controller',
+                        '__NAMESPACE__' => 'RefPays\Controller',
                         'controller'    => 'Admin',
                         'action'        => 'index',
                     ),
@@ -54,7 +54,7 @@ return array(
                 'options' => array(
                     'route'    => '/admin/api/delete/[:code]',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'RefPAys\Controller',
+                        '__NAMESPACE__' => 'RefPays\Controller',
                         'controller'    => 'Admin',
                         'action'        => 'delete',
                     ),
@@ -65,7 +65,7 @@ return array(
                 'options' => array(
                     'route'    => '/admin/api/update/[:code]',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'RefPAys\Controller',
+                        '__NAMESPACE__' => 'RefPays\Controller',
                         'controller'    => 'Admin',
                         'action'        => 'PaysUpdate',
                     ),
@@ -76,7 +76,7 @@ return array(
                 'options' => array(
                     'route'    => '/admin/api/create',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'RefPAys\Controller',
+                        '__NAMESPACE__' => 'RefPays\Controller',
                         'controller'    => 'Admin',
                         'action'        => 'PaysCreate',
                     ),
@@ -93,14 +93,14 @@ return array(
             'translator' => 'Zend\Mvc\Service\TranslatorServiceFactory',
             'pays-table' => function($sm) {
                 $tableGateway = $sm->get('pays-table-gateway');
-                $table = new \RefPAys\Model\PaysTable($tableGateway);
+                $table = new \RefPays\Model\PaysTable($tableGateway);
                 
                 return $table;
             },
             'pays-table-gateway' => function ($sm) {
                 $dbAdapter = $sm->get('Zend\db\Adapter\Adapter');
                 $resultSetPrototype = new \Zend\Db\ResultSet\ResultSet();
-                $resultSetPrototype->setArrayObjectPrototype(new \RefPAys\Model\Pays());
+                $resultSetPrototype->setArrayObjectPrototype(new \RefPays\Model\Pays());
                 
                 return new \Zend\Db\TableGateway\TableGateway('pays', $dbAdapter, null, $resultSetPrototype);
             },
@@ -118,9 +118,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'RefPAys\Controller\Index' => 'RefPAys\Controller\IndexController',
-            'RefPAys\Controller\Api' => 'RefPAys\Controller\ApiController',
-            'RefPAys\Controller\Admin' => 'RefPAys\Controller\AdminController'
+            'RefPays\Controller\Index' => 'RefPays\Controller\IndexController',
+            'RefPays\Controller\Api' => 'RefPays\Controller\ApiController',
+            'RefPays\Controller\Admin' => 'RefPays\Controller\AdminController'
         ),
     ),
     'view_manager' => array(

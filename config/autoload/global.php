@@ -16,7 +16,10 @@ return array(
         'driver' => 'Pdo',
         'dsn' => 'mysql:dbname=zdef_api;host=localhost',
         'username' => 'root',
-        'password' => '',
+        'password' => 'root',
+        'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
+
+
         'driver_options' => [
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\'  '
         ],
