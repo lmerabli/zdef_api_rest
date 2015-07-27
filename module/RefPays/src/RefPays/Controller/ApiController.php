@@ -41,7 +41,7 @@ class ApiController extends AbstractRestfulController
             $code = $this->params('code');
             
             $paysTable = $this->getServiceLocator()->get('pays-table');
-            $pays = $paysTable->getPays($code, "", true)[0];
+            $pays = $paysTable->getPays($code, true)[0];
             
             $dataPays = $pays->toArray();
             
@@ -86,7 +86,6 @@ class ApiController extends AbstractRestfulController
         }
         
         $code = $this->params('code');
-        $fieldsString = $this->params()->fromQuery('fields');
         
         $paysTable = $this->getServiceLocator()->get('pays-table');
         
@@ -95,9 +94,9 @@ class ApiController extends AbstractRestfulController
             
             $this->response->getHeaders()->addHeaderLine('Content-Type', 'text/xml; charset=utf-8');
             
-            $paysList = $paysTable->getPaysXml($code, $fieldsString);
+            $paysList = $paysTable->getPaysXml($code);
         } else {
-            $paysList = $paysTable->getPays($code, $fieldsString);
+            $paysList = $paysTable->getPays($code);
         }
         
         $view->setVariable('pays', $paysList);

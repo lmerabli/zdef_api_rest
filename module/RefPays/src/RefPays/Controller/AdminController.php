@@ -22,7 +22,7 @@ class AdminController extends AbstractActionController
         $paysList = $paysTable->getPaysAdmin("", "nom_fr_fr", true);
         
         $view->setVariable('pays', $paysList);
-        var_dump($paysList);
+        
         return $view;
     }
     

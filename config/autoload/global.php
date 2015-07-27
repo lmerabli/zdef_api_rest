@@ -16,7 +16,7 @@ return array(
         'driver' => 'Pdo',
         'dsn' => 'mysql:dbname=zdef_api;host=localhost',
         'username' => 'root',
-        'password' => 'root',
+        'password' => '',
         'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
 
 

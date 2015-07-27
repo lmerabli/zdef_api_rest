@@ -102,7 +102,7 @@ class Pays
         $this->devise = (isset($data['devise'])) ? $data['devise'] : null;
         $this->nomEnGb = (isset($data['nom_en_gb'])) ? $data['nom_en_gb'] : null;
         $this->nomFrFr = (isset($data['nom_fr_fr'])) ? $data['nom_fr_fr'] : null;
-        $this->tauxTva = (isset($data['taux_tva'])) ? $data['taux_tva'] : null;
+        $this->tauxTva = (isset($data['tauxTva'])) ? $data['tauxTva'] : null;
     }
     
     /**
@@ -143,7 +143,7 @@ class Pays
         }
         
         if ((isset($this->tauxTva))) {
-            $array['taux_tva'] = $this->tauxTva;
+            $array['tauxTva'] = $this->tauxTva;
         }
         
         return $array;

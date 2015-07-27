@@ -40,7 +40,7 @@ class Pays extends Form
         $devise = new Text('devise');
         $devise->setLabel('Devise :');
         
-        $tauxTva = new Text('taux_tva');
+        $tauxTva = new Text('tauxTva');
         $tauxTva->setLabel('Taux TVA :');
         
         $submit = new Submit('send');
